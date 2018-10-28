@@ -16,7 +16,7 @@ try:
 except:
     pass;
     
-#function to resuce flickering
+#function to reduce flickering
 def isPointClose(x1,y1,x2,y2,scale):
     d=math.sqrt((x1-x2)**2+(y1-y2)**2);
     if d<=scale:     #length<=scale?
