@@ -103,7 +103,7 @@ while True:
             
             #angle = math.atan2(y2 - y1, x2 - x1) * 180.0 / math.pi;
             length=math.sqrt(math.pow((y2-y1),2)+math.pow((x2-x1),2))
-            print(angle);
+            #print(angle);
             
             if length<50:
                 continue
