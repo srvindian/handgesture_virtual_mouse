@@ -66,14 +66,14 @@ while True:
     
     ############ Tracking the hand contour ################
     
-    con=cv2.findContours(bw_frame,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)[1];
+    con=cv2.findContours(bw_frame,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)[0];
     try:
         my_con=max(con,key=cv2.contourArea);
     except:
         my_con=np.array([[[1,0],[1,2],[2,3]]],dtype=np.int32);
         #pass;
-
     try:
+        print(cv2.contourArea(my_con))
         if cv2.contourArea(my_con)>90:
             
             hull=cv2.convexHull(my_con,True);
@@ -91,7 +91,6 @@ while True:
             cv2.circle(roi,topmost,5,(255,0,0),-1);
             cv2.circle(roi,leftmost,5,(0,120,255),-1);
             cv2.circle(roi,(temp,bottommost[1]),5,(230,0,255),-1);
-            
             ###################### angle calculate #####################
             x1=topmost[0];y1=topmost[1];
             x2=bottommost[0]+20;y2=bottommost[1];
