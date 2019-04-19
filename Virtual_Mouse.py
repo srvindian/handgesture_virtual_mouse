@@ -73,7 +73,6 @@ while True:
         my_con=np.array([[[1,0],[1,2],[2,3]]],dtype=np.int32);
         #pass;
     try:
-        print(cv2.contourArea(my_con))
         if cv2.contourArea(my_con)>90:
             
             hull=cv2.convexHull(my_con,True);
